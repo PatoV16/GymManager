@@ -1,0 +1,14 @@
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\bin\Debug\net8.0\GymApp.Backend.deps.json
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\bin\Debug\net8.0\GymApp.Backend.runtimeconfig.json
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\bin\Debug\net8.0\GymApp.Backend.dll
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\bin\Debug\net8.0\GymApp.Backend.pdb
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.dll
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\refint\GymApp.Backend.dll
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.pdb
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\GymApp.Backend.genruntimeconfig.cache
+C:\Users\Usuario\source\repos\GymApp\GymApp.Backend\obj\Debug\net8.0\ref\GymApp.Backend.dll

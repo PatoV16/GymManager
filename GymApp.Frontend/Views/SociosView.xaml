@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="GymApp.Frontend.Views.SociosView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:GymApp.Frontend.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:SociosViewModel}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ===== ENCABEZADO ===== -->
+        <TextBlock Grid.Row="0" 
+                   Text="👥 Gestión de Socios" 
+                   FontSize="26" 
+                   FontWeight="Bold"
+                   Foreground="#2C3E50"
+                   Margin="0,0,0,15"/>
+
+        <!-- ===== BARRA DE ACCIONES ===== -->
+        <Grid Grid.Row="1" Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Búsqueda -->
+            <Border Grid.Column="0" 
+                    Background="White" 
+                    BorderBrush="#BDC3C7" 
+                    BorderThickness="1"
+                    CornerRadius="4"
+                    Padding="8,0"
+                    MaxWidth="350"
+                    HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               Text="🔍" 
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0"
+                               FontSize="14"/>
+                    <TextBox Grid.Column="1"
+                             Text="{Binding TextoBusqueda, UpdateSourceTrigger=PropertyChanged}"
+                             BorderThickness="0"
+                             VerticalContentAlignment="Center"
+                             FontSize="13"/>
+                </Grid>
+            </Border>
+
+            <!-- Botones -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Content="➕ Nuevo Socio" 
+                        Command="{Binding NuevoCommand}"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+                <Button Content="✏️ Editar" 
+                        Command="{Binding EditarCommand}"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+                <Button Content="🗑️ Eliminar" 
+                        Command="{Binding EliminarCommand}"
+                        Style="{StaticResource DangerButtonStyle}"/>
+                <Button Content="🔄 Refrescar" 
+                        Command="{Binding CargarCommand}"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- ===== TABLA DE SOCIOS ===== -->
+        <Border Grid.Row="2" 
+                Background="White" 
+                CornerRadius="6"
+                BorderBrush="#E0E0E0"
+                BorderThickness="1">
+            <DataGrid ItemsSource="{Binding Socios}"
+                      SelectedItem="{Binding SocioSeleccionado}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="Horizontal"
+                      HorizontalGridLinesBrush="#EEEEEE"
+                      RowHeight="38"
+                      FontSize="13"
+                      BorderThickness="0"
+                      Background="Transparent"
+                      RowBackground="White"
+                      AlternatingRowBackground="#F9F9F9">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                    <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}" Width="*"/>
+                    <DataGridTextColumn Header="Cédula" Binding="{Binding Cedula}" Width="140"/>
+                    <DataGridTextColumn Header="Teléfono" Binding="{Binding Telefono}" Width="130"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                    <DataGridTextColumn Header="Registro" 
+                                        Binding="{Binding FechaRegistro, StringFormat=dd/MM/yyyy}" 
+                                        Width="110"/>
+                    <DataGridCheckBoxColumn Header="Activo" Binding="{Binding Activo}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <!-- Indicador de carga -->
+        <TextBlock Grid.Row="2" 
+                   Text="Cargando..." 
+                   FontSize="16"
+                   Foreground="#7F8C8D"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Visibility="{Binding Cargando, Converter={StaticResource BoolToVis}}"/>
+    </Grid>
+</UserControl>

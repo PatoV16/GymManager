@@ -1,0 +1,54 @@
+﻿<Window x:Class="GymApp.Frontend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GymApp - Gestión de Gimnasio"
+        Height="720" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ===== MENÚ LATERAL ===== -->
+        <Border Grid.Column="0" Background="#2C3E50">
+            <StackPanel>
+                <!-- Logo / Título -->
+                <Border Background="#1A252F" Padding="20,25">
+                    <StackPanel>
+                        <TextBlock 
+                                   Foreground="White" 
+                                   FontSize="22" 
+                                   FontWeight="Bold"><Run Language="es-es" Text="EliteGYM"/></TextBlock>
+                        <TextBlock Text="Sistema de Gestión" 
+                                   Foreground="#95A5A6" 
+                                   FontSize="11" 
+                                   Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Botones del menú -->
+                <Button Content="👥  Socios" 
+                        Click="BtnSocios_Click"
+                        Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="🎫  Membresías" 
+                        Click="BtnMembresias_Click"
+                        Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="💰  Pagos" 
+                        Click="BtnPagos_Click"
+                        Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="📊  Reportes" 
+                        Click="BtnReportes_Click"
+                        Style="{StaticResource MenuButtonStyle}"/>
+
+            </StackPanel>
+        </Border>
+
+        <!-- ===== ÁREA DE CONTENIDO ===== -->
+        <ContentControl Grid.Column="1" 
+                        x:Name="ContenidoPrincipal"
+                        Margin="15"/>
+    </Grid>
+</Window>
